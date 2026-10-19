@@ -32,7 +32,7 @@ I designed the board from scratch in KiCad, wrote the firmware in C (ESP-IDF) wi
 | Water pump | Working | Low-side N-MOS switch with flyback diode |
 | Temperature & humidity (DHT11) | Working | Read on demand from the app |
 | Ultrasonic rear parking sensor | Working | Cuts reverse motor power at 5 cm or closer and beeps |
-| Clap-controlled turn signals | Working, limited | Microphone detects volume spikes: 2 claps = left, 3 claps = right |
+| Clap-controlled turn signals | Working, limited | Microphone detects volume spikes: 2 claps = left, 3 claps = right, 4 claps = hazard |
 | Camera (OV3660, 24-pin FPC) | **Not working** | See [Known issues](#known-issues) |
 
 ---
@@ -155,7 +155,6 @@ The App Inventor block screenshots are in [`MIT/`](MIT).
 **V3 (through-hole version)**
 - A through-hole variant of the board for easier hand assembly, built after the SMD experience
 
-![Through-hole version](docs/images/board-through-hole.jpg)
 | Schematic | PCB layout | 3D render |
 |---|---|---|
 | ![Schematic](Through-hole/schematic.png)| ![PCB layout](Through-hole/layout.png) | ![3D render](Through-hole/3DView.png) |
@@ -212,11 +211,12 @@ Off-board: DC motors, servo, DHT11, HC-SR04-style ultrasonic sensor, microphone 
 
 ```
 .
-|-- docs/      KiCad project, schematic, layout
+|-- docs/      images, gifs, documentation
 |-- Through-hole/     KiCad project, schematic, layout V2
 |-- MIT/           MIT App Inventor project pictures, videos, logo
 |-- The48ErrCar.apk      Apk to download the app
-`-- firmware.c/          ESP-32 Code
+|-- firmware.c/          ESP-32 Code
+|-- hardware.c/          KiCad project, schematic, layout
 
 ```
 
@@ -226,9 +226,6 @@ The board was assembled entirely by hand with a soldering iron and a heat gun.
 
 ![Assembly timelapse](docs/videos/pcb_mount.gif)
 
-## Videos
-
-You can find videos in docs/videos folder.
 
 ## Status
 
